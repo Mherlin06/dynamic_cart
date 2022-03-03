@@ -1,1 +1,6 @@
 *.app_base.js
+
+# le fichir app_base.js ayant été commit avant la création du fichier .gitognore, #
+# celui-ci ne sera pas ignoré puisque déjà présent dans le repository #
+# dans ce cas, il faut d'abord le supprimer du repos avec la commande #
+# $ git rm --cached [fichier] #
