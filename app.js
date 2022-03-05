@@ -1,4 +1,3 @@
-// new array of products
 var nbaJersey = [];
 
 function initArrayProduct() {
@@ -20,39 +19,51 @@ function initArrayProduct() {
 
 initArrayProduct();
 
-// Cleaning ul/li list
-var ul = document.querySelector("ul");
+//B
 
 function resetMenu(){
-    var ul = document.querySelector("ul");
-    var liValue = document.querySelectorAll('li');
-    for( const i of liValue ){
-        ul.removeChild(i);
-    }
-}
-
-// creating li with arrayProduct
-function addProductToMenu(){
-    for( const products of nbaJersey){
-        var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.setAttribute("href", "#");
-        a.textContent = products;
-        li.appendChild(a);
-        ul.appendChild(li);
+    var ul = document.querySelector('ul');
+    var lis = document.querySelectorAll('li');
+    for (var i=0 ; i < lis.length; i++) {
+        var liCurrent = lis[i];
+        ul.removeChild(liCurrent)
     }
 }
 
 
-//initiate functions
+//C
 
-resetMenu();
-addProductToMenu();
+function addAllToMenu(){
+    for (var i =0 ; i<nbaJersey.length;i++) {
+        var produit = nbaJersey[i];
+        console.log("produit",produit)
+        addItemToMenu(produit)
 
-//onClick button
+
+    }
+}
+
+//D
+
+function addItemToMenu(name) {
+    var ul = document.querySelector('ul');
+    var li = document.createElement("li");
+    var a = document.createElement('a');
+    a.textContent = name
+    a.setAttribute('href','#')
+    
+    li.appendChild(a)
+    ul.appendChild(li)
+}
+//E
+function refreshMenu(){
+    resetMenu()
+    addAllToMenu();
+}
+refreshMenu();
 
 function addToList(){
+
   nbaJersey.push(document.getElementById("input").value);
-  resetMenu();
-  addProductToMenu();
+  refreshMenu();
 }
