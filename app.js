@@ -1,3 +1,4 @@
+// Initialize array
 var nbaJersey = [];
 
 function initArrayProduct() {
@@ -19,51 +20,43 @@ function initArrayProduct() {
 
 initArrayProduct();
 
-//B
-
+// Reset Menu
 function resetMenu(){
-    var ul = document.querySelector('ul');
-    var lis = document.querySelectorAll('li');
-    for (var i=0 ; i < lis.length; i++) {
-        var liCurrent = lis[i];
-        ul.removeChild(liCurrent)
+    var ul = document.querySelector("ul");
+    var liValue = document.querySelectorAll('li');
+    for( const i of liValue ){
+        ul.removeChild(i);
     }
 }
 
-
-//C
-
-function addAllToMenu(){
-    for (var i =0 ; i<nbaJersey.length;i++) {
-        var produit = nbaJersey[i];
-        console.log("produit",produit)
-        addItemToMenu(produit)
-
-
+// add array to Menu UL/LI + set attribute 
+function addProductToMenu(){
+    for( const products of nbaJersey){
+        var ul = document.querySelector("ul");
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.setAttribute("href", "#");
+        a.textContent = products;
+        li.appendChild(a);
+        ul.appendChild(li);
     }
 }
 
-//D
-
-function addItemToMenu(name) {
-    var ul = document.querySelector('ul');
-    var li = document.createElement("li");
-    var a = document.createElement('a');
-    a.textContent = name
-    a.setAttribute('href','#')
-    
-    li.appendChild(a)
-    ul.appendChild(li)
-}
-//E
+// Main refreshing menu
 function refreshMenu(){
     resetMenu()
-    addAllToMenu();
+    addProductToMenu();
 }
 refreshMenu();
 
+// add new item to array & menu 
+// check for doubles
 function addToList(){
-
-  nbaJersey.push(document.getElementById("input").value);
-  refreshMenu();
+    if ( nbaJersey.includes(document.getElementById("input").value) ){
+        alert("This player is already on the list");
+    }
+    else {
+    nbaJersey.push(document.getElementById("input").value);
+    refreshMenu();
+    }
 }

@@ -165,7 +165,7 @@ console.log("lis",lis)
 
 for (var i = 0; i<lis.length; i++) {
     let liSelection = lis[i];
-    //ul.removeChild(liSelection)
+    ul.removeChild(liSelection)
 }
 
 //EVENTS
