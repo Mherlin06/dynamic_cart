@@ -60,3 +60,14 @@ function addToList(){
     refreshMenu();
     }
 }
+
+// Delete item 
+function deleteItem(){
+    if ( nbaJersey.includes(document.getElementById("input").value) ){
+       nbaJersey.splice(nbaJersey.indexOf(document.getElementById("input").value), 1);
+    }
+    else {
+        alert("This player is not on the list")
+    }
+    refreshMenu();
+}
