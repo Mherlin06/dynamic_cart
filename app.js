@@ -38,6 +38,7 @@ function addProductToMenu(){
         a.textContent = products;
         a.setAttribute('href', '#');
         a.setAttribute('onmouseover', "fillInput('"+products+"')");
+        a.setAttribute('onclick', "addToCart('"+products+"')");
         li.appendChild(a);
         ul.appendChild(li);
     }
@@ -76,4 +77,42 @@ function deleteItem(){
 // function mouseover to fill input field
 function fillInput(name){
     document.getElementById("input").value = name ;
+}
+
+// initiate cartArray & cart infos
+var cart = [];
+
+function refreshCartInfo(){
+    if (cart.length <= 1) {
+        document.getElementById("cart_info").textContent = "You have " + cart.length + " item inside your cart";
+    }
+    else {
+        document.getElementById("cart_info").textContent = "You have " + cart.length + " items inside your cart";
+    }    
+}
+refreshCartInfo();
+toggleCartDetails();
+
+// add items to shopping cart
+function addToCart(itemName){
+    cart.push(itemName);
+    refreshCartInfo();
+    toggleCartDetails();
+}
+
+// reseting cart to 0
+function resetCart(){
+    cart = [];
+    refreshCartInfo();
+    toggleCartDetails();
+}
+
+// toggle cart details
+function toggleCartDetails (){
+    if ( cart.length > 0){
+        document.getElementById("cart_details").textContent = " Your cart: " + cart;
+    }
+    else {
+        document.getElementById("cart_details").textContent = " Your cart is empty ";       
+    }
 }
