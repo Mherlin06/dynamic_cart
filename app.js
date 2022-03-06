@@ -35,8 +35,9 @@ function addProductToMenu(){
         var ul = document.querySelector("ul");
         var li = document.createElement("li");
         var a = document.createElement("a");
-        a.setAttribute("href", "#");
         a.textContent = products;
+        a.setAttribute('href', '#');
+        a.setAttribute('onmouseover', "fillInput('"+products+"')");
         li.appendChild(a);
         ul.appendChild(li);
     }
@@ -44,7 +45,7 @@ function addProductToMenu(){
 
 // Main refreshing menu
 function refreshMenu(){
-    resetMenu()
+    resetMenu();
     addProductToMenu();
 }
 refreshMenu();
@@ -70,4 +71,9 @@ function deleteItem(){
         alert("This player is not on the list")
     }
     refreshMenu();
+}
+
+// function mouseover to fill input field
+function fillInput(name){
+    document.getElementById("input").value = name ;
 }
