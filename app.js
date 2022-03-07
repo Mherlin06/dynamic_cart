@@ -34,12 +34,13 @@ function addProductToMenu(){
     for( const products of nbaJersey){
         var ul = document.querySelector("ul");
         var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.textContent = products;
-        a.setAttribute('href', '#');
-        a.setAttribute('onmouseover', "fillInput('"+products+"')");
-        a.setAttribute('onclick', "addToCart('"+products+"')");
-        li.appendChild(a);
+        var div = document.createElement("div");
+        div.textContent = products;
+        div.setAttribute('href', '#');
+        div.setAttribute('class', 'player');
+        div.setAttribute('onmouseover', "fillInput('"+products+"')");
+        div.setAttribute('onclick', "addToCart('"+products+"')");
+        li.appendChild(div);
         ul.appendChild(li);
     }
 }

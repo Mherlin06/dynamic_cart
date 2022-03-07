@@ -8,7 +8,6 @@
 <script src="app.js" async></script>
 </head>
 <body>
-
 <header>
   <h2>NBA Jersey fake shop </h2>
   <span>
@@ -16,29 +15,27 @@
         <img src="panier.png" width="50" onclick="resetCart()"/> 
   </span>
 </header>
-
 <section>
   <nav>
+    <div class="form">
     <input type="text" id="input"/>
     <button onclick="addToList()" >ADD</button>
     <button onclick="deleteItem()" >DELETE</button>
-  
+    </div>
+    <div class="list">  
     <ul>
-      <li><a href="#">Empty</a></li>
-     
+      <li><a href="#">Empty</a></li>     
     </ul>
+    </div>
   </nav>
   
   <article>
-    <h1>Hugues MOURICE Dev Project training</h1>
-    <p>Welcome to my fake jersey shopping</p>
-    <p id="cart_details"></p>
+    <h1>Welcome to my fake jersey shopping</h1>
+    <div><p id="cart_details">Votre panier est vide</p></div>
   </article>
 </section>
-
 <footer>
-  <p>Ceci est un Footer</p>
+  <p>Hugues MOURICE Dev Project training</p>
 </footer>
-
 </body>
 </html>

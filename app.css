@@ -1,66 +1,103 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+  margin:0;
+  list-style-type: none;
+ }
+
+body {
+  font-family:Helvetica neue, sans-serif;
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;    
+}
+
+header {
+  background-color: #1D1F20;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  font-size: 35px;
+}
+
+section {
+background: #1D1F20;
+  height:100%;
+  width:100%;
+}
+
+ nav {     
+  float: left;
+  width: 25%;
+  height: 100%;
+  background: #ccc;
+  padding: 20px; 
+  background: #1D1F20;
+}
+
+.player { background: #1D1F20 ;
+          margin: 2px;
+          padding: 4px 1em;
+          text-align: center;
+          transition: 0.5s;            
+          color: white;
+          border: solid 1px #666;
+          border-radius: 5px;
+          display: inline-block;
+          cursor: pointer;
+        }
+
+.player:hover {
+          background:#666;           
+               }
+
+nav ul {   
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Style the header */
-  header {
-    background-color: #666;
-    padding: 30px;
-    text-align: center;
-    color: white;
   }
 
-  h2 {
-    text-align: center;
-    font-size: 35px;
+article {
+  float: left;
+  padding: 20px;
+  width: 60%;
+  background-color:#999;
+  height: 80%;
+  margin:6%;
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  border-radius: 15px;
   }
-  
-  /* Create two columns/boxes that floats next to each other */
-  nav {
-    float: left;
-    width: 30%;
-    height: 300px; /* only for demonstration, should be removed */
-    background: #ccc;
-    padding: 20px;
-  }
-  
-  /* Style the list inside the menu */
-  nav ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  article {
-    float: left;
-    padding: 20px;
-    width: 70%;
-    background-color: #f1f1f1;
-    height: 300px; /* only for demonstration, should be removed */
-  }
-  
-  /* Clear floats after the columns */
-  section:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Style the footer */
+
+#cart_details{
+
+}
+
   footer {
-    background-color: #777;
-    padding: 10px;
-    text-align: center;
-    color: white;
+  background-color: #1D1F20;
+  padding: 10px;
+  text-align: center;
+  color: white;
+ }
+
+@media (max-width: 600px) {
+section {
+    display:flex;
+    flex-direction:column;
+   
   }
-  
-  /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-  @media (max-width: 600px) {
-    nav, article {
-      width: 100%;
-      height: auto;
-    }
+section, nav, article {
+    width: 100%;
+    height: auto;
   }
+}
+
+
+
